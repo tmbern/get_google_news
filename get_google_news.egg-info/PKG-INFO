@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: get-google-news
+Version: 0.1
+Summary: A Python 3 module to load Google News RSS feeds into a pandas DataFrame
+Home-page: https://github.com/alex-pakalniskis/get_google_news
+Author: Alex Pakalniskis 3
+Author-email: alexpakalniskis3@gmail.com
+License: MIT
+Description: # get_google_news
+        A Python module to load Google News RSS feeds into pandas DataFrames
+        Takes a location and topic of interest as inputs.
+        Returns a pandas DataFrame of article results
+        
+        ### Examples
+        
+        ```python
+        
+        from get_google_news import RSSDataFrame
+        
+        df = RSSDataFrame("California","Tacos").get()
+        
+        another_df = RSSDataFrame("Canada","Hockey")
+        
+        ```
+Keywords: Google News
+Platform: UNKNOWN
+Description-Content-Type: text/markdown

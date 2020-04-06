@@ -1,0 +1,8 @@
+README.md
+setup.py
+get_google_news/RSSDataFrame.py
+get_google_news/__init__.py
+get_google_news.egg-info/PKG-INFO
+get_google_news.egg-info/SOURCES.txt
+get_google_news.egg-info/dependency_links.txt
+get_google_news.egg-info/top_level.txt
