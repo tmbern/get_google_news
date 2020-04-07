@@ -2,17 +2,37 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 
-class RSSDataFrame:
 
-    """This function takes a location name (string dtype) and a topic of interest (string dtype). 
-    The output is a pandas DataFrame with articles, urls, and publishing times for articles containing the location and topic
+class RSSDataFrame:
+    
+    """
+    Container for article titles, links,
+    publish times, and sources scraped 
+    from Google News RSS feeds.
     """
 
-    def __init__(self, location, topic):
-        self.location = location
-        self.topic = topic
-        self.url = "https://news.google.com/rss/search?q={}+{}&hl=en-US&gl=US&ceid=US:en".format(self.location, self.topic)
+    def __init__(self, language, topic, location):
 
+        """
+        Takes a location name (string dtype), 
+        language (string dype), and a topic of 
+        interest (string dtype) to construct
+        a simple query to Google News RSS feed.
+        """
+        
+        self.location = location
+        self.language = language
+        self.topic = topic
+        self.url =  "https://news.google.com/rss/search?q={}&gl={}&hl={}-{}&ceid={}:{}-{}".format(
+            topic, 
+            location,
+            language, 
+            location, 
+            location,
+            language, 
+            location
+            )
+            
     def get(self):
         self.list_of_titles = []
         self.list_of_article_links = []
